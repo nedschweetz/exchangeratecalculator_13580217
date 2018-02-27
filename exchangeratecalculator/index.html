@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Calculator</title>
+		<meta charset="utf-8">
+
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/jquery-1.8.2.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="css/dd.css">
+	    <script src="js/jquery.dd.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="xscss/flags.css">
+
+	</head>
+
+	<body>
+
+		<div class="app">
+			
+			<div class="container">
+
+				<div class="col-md-12 ">
+					<div class="frm col-md-offset-4 text-center">
+
+
+						<form action="calculate-result.php" method="post">
+							
+							<br>
+
+
+							<div class="txt text-center text-info">
+								<label>EXCHANGE CALCULATOR</label><br>
+							</div>
+
+							<br>
+							
+							<label class="txt2 text-center text-info space">
+							ระบุจำนวนเงินที่ท่านต้องการแลกเปลี่ยน
+							</label>
+
+							<input type="text" name="thb" class="form-control frame" id="formGroupExampleInput" placeholder="กรุณาใส่ค่าเป็นตัวเลข" onkeypress="check_key_number();"><br>
+							
+							<label class="txt2 text-center text-info space">
+							กรุณาเลือกสกุลเงินที่ท่านต้องการ
+							</label>
+
+
+							<select name="type" class="form-control selectpicker frame" id="countries">
+
+								<option value="usd" 
+								data-image="https://www.bot.or.th/english/_layouts/application/Images/flagUSD.png">USD</option>
+
+								<option value="jyp" 
+								data-image="https://www.bot.or.th/english/statistics/_layouts/application/Images/flagJPY.png">JYP</option>
+
+								<option value="krw" 
+								data-image="https://www.bot.or.th/english/statistics/_layouts/application/Images/flagKRW.png">KRW</option>
+
+								<option value="gbp" 
+								data-image="https://www.bot.or.th/english/statistics/_layouts/application/Images/flagGBP.png">GBP</option>
+
+								<option value="eur" 
+								data-image="https://www.bot.or.th/english/statistics/_layouts/application/Images/flagEUR.png">EUR</option>
+							
+							</select>
+							<br>
+							<br>
+
+							<button type="submit" class="btn form-control">
+							CALCULATE
+							</button>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			$(document).ready(function() {
+			$("#countries").msDropdown();
+			 })
+		</script>
+
+		<script language="JavaScript" type="text/JavaScript">
+			function check_key_number() {
+			use_key=event.keyCode
+			if (use_key != 13 && (use_key < 48) || (use_key > 57)) {
+			event.returnValue = false;
+			}
+			}
+		</script>
+
+
+		
+
+		
+	</body>
+
+</html>
